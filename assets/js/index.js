@@ -27,7 +27,7 @@ const takeWatches = function () {
                             <h5 class="card-title">${data.name}</h5>
                             <p class="card-text">${data.description}</p>
                             <p class="card-text">${data.price} €</p>
-                            <a href="./dettagli.html" class="btn btn-primary">Dettagli</a>
+                            <a href="./dettagli.html?id=${data.product}" class="btn btn-primary">Dettagli</a>
                         </div>
                     </div>
                 </div>`
