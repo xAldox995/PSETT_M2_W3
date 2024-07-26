@@ -101,6 +101,7 @@ throw new Error('Attenzione sbagli qualcosa')
   .then((data) => {
     console.log(data)
     alert('Prodotto salvato con successo');
+    location.href = "index.html";
   })
   .catch((error) => {
     console.log('Errore', error)
