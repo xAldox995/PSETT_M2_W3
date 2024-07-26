@@ -81,8 +81,11 @@ productForm.addEventListener("submit", (e) => {
     price: document.getElementById("price").value,
     imageUrl: document.getElementById("imageUrl").value,
   };
-  fetch(URL, {
-    method: "POST",
+  const method = productId ? 'PUT' : 'POST';
+  const endpoint = productId ? `${URL}${productId}` : URL;
+
+  fetch(endpoint, {
+    method: method,
     headers: {
       "Content-Type": "application/json",
       "Authorization": `Bearer ${ath}`,
@@ -94,6 +97,10 @@ productForm.addEventListener("submit", (e) => {
     } else { 
 throw new Error('Attenzione sbagli qualcosa')
     }
+  })
+  .then((data) => {
+    console.log(data)
+    alert('Prodotto salvato con successo');
   })
   .catch((error) => {
     console.log('Errore', error)
