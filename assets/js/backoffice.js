@@ -31,20 +31,21 @@ class Watch {
     this.description = _descripton;
   }
 }
-
+const brandValue = document.getElementById("brand").value;
+const namedValue = document.getElementById("name").value;
+const priceValue = document.getElementById("price").value;
+const imageUrlValue = document.getElementById("imageUrl").value;
+const descriptionValue = document.getElementById("description").value;
+const newWatch = new Watch(
+    brandValue,
+    namedValue,
+    priceValue,
+    imageUrlValue,
+    descriptionValue
+  )
+  
 const productForm = document.getElementById("productForm");
 productForm.addEventListener("submit", function (e) {
-  const brandValue = document.getElementById("brand").value;
-  const namedValue = document.getElementById("name").value;
-  const priceValue = document.getElementById("price").value;
-  const imageUrlValue = document.getElementById("imageUrl").value;
-  const descriptionValue = document.getElementById("description").value;
+
 });
 
-const newWatch = new Watch(
-  brandValue,
-  namedValue,
-  priceValue,
-  imageUrlValue,
-  descriptionValue
-);
