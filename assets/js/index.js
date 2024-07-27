@@ -62,4 +62,5 @@ const generateCards = function (productArray) {
                    watchesRow.innerHTML += watchCol
 
   })
-}
+};
+
