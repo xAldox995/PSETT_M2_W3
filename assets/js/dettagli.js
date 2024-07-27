@@ -2,8 +2,8 @@ const URL = "https://striveschool-api.herokuapp.com/api/product/";
 const ath =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmEzNTRhY2YyNjBjYzAwMTVjYzBkZDAiLCJpYXQiOjE3MjE5ODI0NzYsImV4cCI6MTcyMzE5MjA3Nn0.wx-24D6s38njK1h_SF8Vo_7B1N4UQ8i5Y7-8EtL2S5k";
 
-const urlParams = new URLSearchParams(window.location.search);
-const productId = urlParams.get("id");
+const urlParams = new URLSearchParams(window.location.search)
+const productId = urlParams.get("id")
 
 const takeProduct = function () {
   fetch(`${URL}${productId}`, {
@@ -12,32 +12,32 @@ const takeProduct = function () {
     },
   })
     .then((response) => {
-      console.log(response);
+      console.log(response)
       if (response.ok) {
-        return response.json();
+        return response.json()
       } else {
-        throw new Error("Stai sbagliondo qualcosa");
+        throw new Error("Stai sbagliondo qualcosa")
       }
     })
     .then((product) => {
-      const productInDetail = document.getElementById("productInDetail");
-      productInDetail.innerHTML = `
-    <div class="col-12 col-md-6">
-          <div class="card ">
-            <img src=${product.imageUrl} class="card-img-top" alt="any">
+      const productInDetail = document.getElementById("productInDetail")
+      const detailCol = `
+        <div class="col-8 text-center">
+          <div class="card">
+            <img src="${product.imageUrl}" class="card-img-top" alt="any">
             <div class="card-body">
               <h5 class="card-title">${product.name}</h5>
               <p class="card-text">${product.description}</p>
-              <p class="card-text">${product.price} €</p>
-              <a href="./backoffice.html?eventId=${singleEvent._id}" class="btn btn-primary">Edit</a>
-              <button class="btn btn-danger" onclick="deleteProduct()">Delete</button>
+              <p class="card-text">${product.price}</p>
+              <a href="./backoffice.html?id=${product._id}" class="btn btn-primary">Edit/a>
+              <button class="btn btn-primary" onxlick="deleteProduct()">Delete</button>
             </div>
-        </div>
-      </div>
-    `;
+          </div>
+        </div>`
+        productInDetail.innerHTML += detailCol
     })
     .catch((error) => {
-      console.log("Non ci arrivi", error);
+      console.log("Non ci arrivi", error)
     });
 };
 

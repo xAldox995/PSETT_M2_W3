@@ -4,7 +4,7 @@ const takeWatches = function () {
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmEzNTRhY2YyNjBjYzAwMTVjYzBkZDAiLCJpYXQiOjE3MjE5ODI0NzYsImV4cCI6MTcyMzE5MjA3Nn0.wx-24D6s38njK1h_SF8Vo_7B1N4UQ8i5Y7-8EtL2S5k";
   fetch(URL, {
     headers: {
-      Authorization: `Bearer ${ath}`,
+      'Authorization': `Bearer ${ath}`,
     },
   })
     .then((response) => {
